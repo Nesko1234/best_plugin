@@ -1,0 +1,71 @@
+{
+  "name": "remove-comments",
+  "displayName": "Remove Comments",
+  "description": "Удаляет комментарии в выделенном коде",
+  "version": "1.0.0",
+  "publisher": "Dolgoropolov-Nikita-M3111",
+  "author": {
+    "name": "Никита Долгополов",
+    "email": ""
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "comments",
+    "cleanup",
+    "formatter",
+    "М3111",
+    "Dolgopolov"
+  ],
+  "activationEvents": [
+    "onCommand:remove-comments.removeComments"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "remove-comments.removeComments",
+        "title": "Remove Comments",
+        "category": "Text",
+        "description": "Удаляет комментарии в выделенном фрагменте кода"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "remove-comments.removeComments",
+        "key": "ctrl+shift+/",
+        "mac": "cmd+shift+/",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "command-palette": [
+        {
+          "command": "remove-comments.removeComments",
+          "when": "editorTextFocus"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "remove-comments.removeComments",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dolgoropolov-Nikita/vscode-remove-comments"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dolgoropolov-Nikita/vscode-remove-comments/issues"
+  },
+  "homepage": "https://github.com/Dolgoropolov-Nikita/vscode-remove-comments#readme"
+}
